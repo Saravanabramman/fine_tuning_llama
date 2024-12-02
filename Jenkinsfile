@@ -16,12 +16,20 @@ pipeline {
             }
         }
 
+
         stage('Install Dependencies') {
             steps {
-                // Use 'bat' instead of 'sh' for pip install on Windows
-                bat 'pip install -r unzipped_folder/LLM_FT/requirements.txt'
+                bat '"C:\\Users\\saravana.kumar\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pip.exe" install -r unzipped_folder/LLM_FT/requirements.txt'
             }
         }
+
+        
+        // stage('Install Dependencies') {
+        //     steps {
+        //         // Use 'bat' instead of 'sh' for pip install on Windows
+        //         bat 'pip install -r unzipped_folder/LLM_FT/requirements.txt'
+        //     }
+        // }
 
         stage('Run Main File') {
             steps {
