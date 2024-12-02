@@ -19,7 +19,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat '"C:\\Users\\saravana.kumar\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pip.exe" install -r unzipped_folder/LLM_FT1/requirements.txt'
+                bat '"C:\\Users\\saravana.kumar\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pip.exe" install -r unzipped_folder/LLM_FT/requirements.txt'
             }
         }
 
@@ -34,7 +34,7 @@ pipeline {
         stage('Run Main File') {
             steps {
                 // Use 'bat' instead of 'sh' for running Python script on Windows
-                bat '"C:\\Users\\saravana.kumar\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" unzipped_folder/LLM_FT1/CI_CD/main.py'
+                bat '"C:\\Users\\saravana.kumar\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" unzipped_folder/LLM_FT/CI_CD/main.py'
             }
         }
     }
