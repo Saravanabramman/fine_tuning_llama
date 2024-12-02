@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Use the 'bat' command for Windows instead of 'sh' for unzip
-                    bat 'powershell -Command "Expand-Archive -Path LLM_FT.zip -DestinationPath ./unzipped_folder"'
+                    bat 'powershell -Command "Expand-Archive -Path LLM_FT1.zip -DestinationPath ./unzipped_folder"'
                 }
             }
         }
@@ -19,7 +19,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat '"C:\\Users\\saravana.kumar\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pip.exe" install -r unzipped_folder/LLM_FT/requirements.txt'
+                bat '"C:\\Users\\saravana.kumar\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\pip.exe" install -r unzipped_folder/LLM_FT1/requirements.txt'
             }
         }
 
@@ -27,14 +27,14 @@ pipeline {
         // stage('Install Dependencies') {
         //     steps {
         //         // Use 'bat' instead of 'sh' for pip install on Windows
-        //         bat 'pip install -r unzipped_folder/LLM_FT/requirements.txt'
+        //         bat 'pip install -r unzipped_folder/LLM_FT1/requirements.txt'
         //     }
         // }
 
         stage('Run Main File') {
             steps {
                 // Use 'bat' instead of 'sh' for running Python script on Windows
-                bat '"C:\\Users\\saravana.kumar\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" unzipped_folder/LLM_FT/CI_CD/main.py'
+                bat '"C:\\Users\\saravana.kumar\\AppData\\Local\\Programs\\Python\\Python312\\python.exe" unzipped_folder/LLM_FT1/CI_CD/main.py'
             }
         }
     }
