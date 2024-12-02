@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Use the 'bat' command for Windows instead of 'sh' for unzip
-                    bat 'powershell -Command "Expand-Archive -Path LLM_FT1.zip -DestinationPath ./unzipped_folder"'
+                    bat 'powershell -Command "Expand-Archive -Path LLM_FT.zip -DestinationPath ./unzipped_folder"'
                 }
             }
         }
